@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		55735D0B261E88E8008A2704 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55735D0A261E88E8008A2704 /* main.swift */; };
+		55735D19261E8EDD008A2704 /* ArithmeticaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55735D18261E8EDD008A2704 /* ArithmeticaTests.swift */; };
+		55735D25261E8F96008A2704 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55735D0A261E88E8008A2704 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +27,20 @@
 /* Begin PBXFileReference section */
 		55735D07261E88E8008A2704 /* Arithmetica */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Arithmetica; sourceTree = BUILT_PRODUCTS_DIR; };
 		55735D0A261E88E8008A2704 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		55735D16261E8EDD008A2704 /* ArithmeticaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArithmeticaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55735D18261E8EDD008A2704 /* ArithmeticaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticaTests.swift; sourceTree = "<group>"; };
+		55735D1A261E8EDD008A2704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		55735D04261E88E8008A2704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55735D13261E8EDD008A2704 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				55735D09261E88E8008A2704 /* Arithmetica */,
+				55735D17261E8EDD008A2704 /* ArithmeticaTests */,
 				55735D08261E88E8008A2704 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				55735D07261E88E8008A2704 /* Arithmetica */,
+				55735D16261E8EDD008A2704 /* ArithmeticaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +74,15 @@
 				55735D0A261E88E8008A2704 /* main.swift */,
 			);
 			path = Arithmetica;
+			sourceTree = "<group>";
+		};
+		55735D17261E8EDD008A2704 /* ArithmeticaTests */ = {
+			isa = PBXGroup;
+			children = (
+				55735D18261E8EDD008A2704 /* ArithmeticaTests.swift */,
+				55735D1A261E8EDD008A2704 /* Info.plist */,
+			);
+			path = ArithmeticaTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +105,23 @@
 			productReference = 55735D07261E88E8008A2704 /* Arithmetica */;
 			productType = "com.apple.product-type.tool";
 		};
+		55735D15261E8EDD008A2704 /* ArithmeticaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55735D1B261E8EDD008A2704 /* Build configuration list for PBXNativeTarget "ArithmeticaTests" */;
+			buildPhases = (
+				55735D12261E8EDD008A2704 /* Sources */,
+				55735D13261E8EDD008A2704 /* Frameworks */,
+				55735D14261E8EDD008A2704 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArithmeticaTests;
+			productName = ArithmeticaTests;
+			productReference = 55735D16261E8EDD008A2704 /* ArithmeticaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +132,9 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					55735D06261E88E8008A2704 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					55735D15261E8EDD008A2704 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -110,9 +153,20 @@
 			projectRoot = "";
 			targets = (
 				55735D06261E88E8008A2704 /* Arithmetica */,
+				55735D15261E8EDD008A2704 /* ArithmeticaTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55735D14261E8EDD008A2704 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55735D03261E88E8008A2704 /* Sources */ = {
@@ -120,6 +174,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				55735D0B261E88E8008A2704 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55735D12261E8EDD008A2704 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55735D25261E8F96008A2704 /* main.swift in Sources */,
+				55735D19261E8EDD008A2704 /* ArithmeticaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +326,42 @@
 			};
 			name = Release;
 		};
+		55735D1C261E8EDD008A2704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4372MH6XLY;
+				INFOPLIST_FILE = ArithmeticaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solfware.ArithmeticaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		55735D1D261E8EDD008A2704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4372MH6XLY;
+				INFOPLIST_FILE = ArithmeticaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solfware.ArithmeticaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -280,6 +379,15 @@
 			buildConfigurations = (
 				55735D0F261E88E8008A2704 /* Debug */,
 				55735D10261E88E8008A2704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55735D1B261E8EDD008A2704 /* Build configuration list for PBXNativeTarget "ArithmeticaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55735D1C261E8EDD008A2704 /* Debug */,
+				55735D1D261E8EDD008A2704 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
