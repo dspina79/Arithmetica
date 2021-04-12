@@ -51,31 +51,31 @@ class GameContext {
     var questionNumber = 1
     var score = 0
     
+    func process(_ answer: String, for question: Question) -> String {
+        guard let intAnswer = Int(answer) else {
+            return "Error"
+        }
+        questionNumber += 1
+        if question.answer == intAnswer {
+            score += 1
+            return "Correct!"
+        } else {
+            return "Sorry, that's wrong."
+        }
+    }
+    
     func start() {
         print("Welcome to Arithmetica!\n")
         
         repeat {
-            
             let q = Question()
             
-            let question = q.string
-            let answer = q.answer
-            
-            print("\n\(questionNumber). \(question)")
+            print("\n\(questionNumber). \(q.string)")
             print("Your answer: ", terminator: "")
             if let inputAnswer = readLine() {
-                guard let intAnswer = Int(inputAnswer) else {
-                    print("Incorrect data type")
-                    continue
-                }
-                questionNumber += 1
-                if answer == intAnswer {
-                    score += 1
-                    print("\nCorrect!")
-                } else {
-                    print("\nSorry, that's wrong.")
-                }
+                print("\n\(process(inputAnswer, for: q))")
             }
+            
         } while questionNumber <= 10
         
         print("\nYou scored \(score).")

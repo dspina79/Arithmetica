@@ -80,5 +80,32 @@ class ArithmeticaTests: XCTestCase {
         
         XCTAssertEqual(6, question.answer)
     }
-
+    
+    func questionOutputWithCorrectAnswer() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        let response = GameContext().process("6", for: question)
+        XCTAssertEqual("Correct!", response)
+    }
+    
+    func questionOutputWithIncorrectAnswer() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        let response = GameContext().process("88", for: question)
+        XCTAssertEqual("Sorry, that's wrong.", response)
+    }
+    
+    func questionOutputWithInvalidAnswer() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        let response = GameContext().process("bad", for: question)
+        XCTAssertEqual("Error", response)
+    }
+    
 }
