@@ -54,13 +54,31 @@ class ArithmeticaTests: XCTestCase {
         XCTAssertEqual("What is 3 x 2?", question.string)
     }
     
-    func questionStringWithMultiplyHasCorrectSyntax() {
+    func questionAnswerWithAdditionEquals5() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.add
+        
+        XCTAssertEqual(5, question.answer)
+    }
+    
+    func questionAnswerWithSubtractionEquals1() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.subtract
+        
+        XCTAssertEqual(1, question.answer)
+    }
+    
+    func questionAnswerWithMultiplyEquals6() {
         var question = Question()
         question.left = 3
         question.right = 2
         question.questionType = QuestionType.multiply
         
-        XCTAssertEqual("What is 3 x 2?", question.string)
+        XCTAssertEqual(6, question.answer)
     }
 
 }

@@ -28,14 +28,23 @@ struct Question {
             return "What is \(self.left) x \(self.right)?"
         }
     }
+
+    var answer: Int {
+        switch self.questionType {
+        case .add:
+            return self.left + self.right
+        case .subtract:
+            return self.left - self.right
+        case .multiply:
+            return self.left * self.right
+        }
+    }
     
     init() {
         left = Int.random(in: 1...12)
         right = Int.random(in: 1...12)
         questionType = QuestionType.allCases.randomElement()!
     }
-    
-    
 }
 
 class GameContext {
@@ -50,19 +59,7 @@ class GameContext {
             let q = Question()
             
             let question = q.string
-            let answer: Int
-        
-            
-            // two switch cases for now...
-            switch q.questionType {
-            case .add:
-                answer = q.left + q.right
-            case .subtract:
-                answer = q.left - q.right
-            case .multiply:
-                answer = q.left * q.right
-            }
-            
+            let answer = q.answer
             
             print("\n\(questionNumber). \(question)")
             print("Your answer: ", terminator: "")
@@ -79,7 +76,7 @@ class GameContext {
                     print("\nSorry, that's wrong.")
                 }
             }
-        } while questionNumber < 10
+        } while questionNumber <= 10
         
         print("\nYou scored \(score).")
     }
