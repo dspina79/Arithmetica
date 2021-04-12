@@ -13,6 +13,31 @@ enum QuestionType: CaseIterable {
     case multiply
 }
 
+struct Question {
+    var left: Int
+    var right: Int
+    var questionType: QuestionType
+    
+    var string: String {
+        switch self.questionType {
+        case .add:
+            return "What is \(self.left) + \(self.right)?"
+        case .subtract:
+            return "What is \(self.left) - \(self.right)?"
+        case .multiply:
+            return "What is \(self.left) x \(self.right)?"
+        }
+    }
+    
+    init() {
+        left = Int.random(in: 1...12)
+        right = Int.random(in: 1...12)
+        questionType = QuestionType.allCases.randomElement()!
+    }
+    
+    
+}
+
 class GameContext {
     var questionNumber = 1
     var score = 0
@@ -21,30 +46,21 @@ class GameContext {
         print("Welcome to Arithmetica!\n")
         
         repeat {
-            let left = Int.random(in: 1...12)
-            let right = Int.random(in: 1...12)
-            let questionType = QuestionType.allCases.randomElement()!
             
-            let question: String
+            let q = Question()
+            
+            let question = q.string
             let answer: Int
-            
-            switch questionType {
-            case .add:
-                question = "What is \(left) + \(right)?"
-            case .subtract:
-                question = "What is \(left) - \(right)?"
-            case .multiply:
-                question = "What is \(left) x \(right)?"
-            }
+        
             
             // two switch cases for now...
-            switch questionType {
+            switch q.questionType {
             case .add:
-                answer = left + right
+                answer = q.left + q.right
             case .subtract:
-                answer = left - right
+                answer = q.left - q.right
             case .multiply:
-                answer = left * right
+                answer = q.left * q.right
             }
             
             

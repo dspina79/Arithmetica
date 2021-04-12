@@ -17,16 +17,50 @@ class ArithmeticaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func questionOperandsWithinBounds() {
+        let question = Question()
+        
+        XCTAssertGreaterThanOrEqual(question.left, 1)
+        XCTAssertGreaterThanOrEqual(question.right, 1)
+        XCTAssertLessThanOrEqual(question.left, 12)
+        XCTAssertLessThanOrEqual(question.right, 12)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func questionStringWithAddHasCorrectSyntax() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        
+        XCTAssertEqual("What is 3 + 2?", question.string)
+    }
+    
+    func questionStringWithSubtractHasCorrectSyntax() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        
+        XCTAssertEqual("What is 3 - 2?", question.string)
+    }
+    
+    func questionStringWithMultiplyHasCorrectSyntax() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        
+        XCTAssertEqual("What is 3 x 2?", question.string)
+    }
+    
+    func questionStringWithMultiplyHasCorrectSyntax() {
+        var question = Question()
+        question.left = 3
+        question.right = 2
+        question.questionType = QuestionType.multiply
+        
+        XCTAssertEqual("What is 3 x 2?", question.string)
     }
 
 }
